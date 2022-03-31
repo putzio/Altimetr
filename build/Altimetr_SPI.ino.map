@@ -1,0 +1,265 @@
+
+
+Symbols from g:\Studia\PUT Rocket LAB\altimetr\Altimetr_SPI\build/Altimetr_SPI.ino.elf:
+
+Name                  Value   Class        Type         Size     Line  Section
+
+__heap_end          |00000000|   W  |            NOTYPE|        |     |*ABS*
+__TEXT_REGION_ORIGIN__|00000000|   W  |            NOTYPE|        |     |*ABS*
+__tmp_reg__         |00000000|   a  |            NOTYPE|        |     |*ABS*
+__tmp_reg__         |00000000|   a  |            NOTYPE|        |     |*ABS*
+__vector_default    |00000000|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:61
+__vectors           |00000000|   T  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:61
+__zero_reg__        |00000001|   a  |            NOTYPE|        |     |*ABS*
+__zero_reg__        |00000001|   a  |            NOTYPE|        |     |*ABS*
+__FUSE_REGION_LENGTH__|0000000a|   A  |            NOTYPE|        |     |*ABS*
+__CCP__             |00000034|   a  |            NOTYPE|        |     |*ABS*
+__CCP__             |00000034|   a  |            NOTYPE|        |     |*ABS*
+__SP_L__            |0000003d|   a  |            NOTYPE|        |     |*ABS*
+__SP_L__            |0000003d|   a  |            NOTYPE|        |     |*ABS*
+__SP_H__            |0000003e|   a  |            NOTYPE|        |     |*ABS*
+__SP_H__            |0000003e|   a  |            NOTYPE|        |     |*ABS*
+__SREG__            |0000003f|   a  |            NOTYPE|        |     |*ABS*
+__SREG__            |0000003f|   a  |            NOTYPE|        |     |*ABS*
+__trampolines_end   |000000fa|   T  |            NOTYPE|        |     |.text
+__trampolines_start |000000fa|   T  |            NOTYPE|        |     |.text
+setup::__c          |000000fa|   t  |            OBJECT|0000004f|     |.text
+__EEPROM_REGION_LENGTH__|00000100|   A  |            NOTYPE|        |     |*ABS*
+__ctors_start       |0000014a|   T  |            NOTYPE|        |     |.text
+__ctors_end         |0000014c|   T  |            NOTYPE|        |     |.text
+__dtors_start       |0000014c|   T  |            NOTYPE|        |     |.text
+__dtors_end         |0000014e|   T  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:230
+__init              |0000014e|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:230
+_initThreeStuff()   |0000015a|   T  |              FUNC|00000018|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/main.cpp:114
+__do_clear_bss      |00000172|   T  |            NOTYPE|00000010|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2441
+.do_clear_bss_loop  |0000017a|   t  |            NOTYPE|        |     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2446
+.do_clear_bss_start |0000017c|   t  |            NOTYPE|        |     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2448
+__do_copy_data      |00000182|   T  |            NOTYPE|00000016|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2409
+__do_global_ctors   |00000198|   T  |            NOTYPE|00000016|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2466
+__bad_interrupt     |000001b6|   T  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_1          |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_10         |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_11         |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_12         |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_13         |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_15         |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_16         |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_2          |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_20         |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_21         |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_22         |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_23         |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_24         |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_26         |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_27         |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_28         |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_29         |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_3          |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_4          |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_5          |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_6          |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_7          |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_8          |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+__vector_9          |000001b6|   W  |            NOTYPE|        |     |.text	../../../../crt1/gcrt1.S:209
+NotifyUser_onReceive.constprop.5|000001b8|   t  |              FUNC|0000001a|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\libraries\Wire\src/twi.c:762
+Print::write(unsigned char const*, unsigned int)|000001d2|   t  |              FUNC|0000005a|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore\api/Print.cpp:29
+UartClass::availableForWrite()|0000022c|   t  |              FUNC|0000001e|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.cpp:642
+UartClass::read()   |0000024a|   t  |              FUNC|00000028|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.cpp:626
+UartClass::peek()   |00000272|   t  |              FUNC|0000001c|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.cpp:618
+UartClass::available()|0000028e|   t  |              FUNC|00000018|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.cpp:614
+UartClass::end()    |000002a6|   t  |              FUNC|0000002e|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.cpp:598
+UartClass::_poll_tx_data_empty()|000002d4|   t  |              FUNC|0000003c|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.cpp:352
+_poll_dre_done      |0000030e|   t  |            NOTYPE|        |     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.cpp:404
+UartClass::write(unsigned char)|00000310|   t  |              FUNC|00000098|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.cpp:682
+UartClass::flush()  |000003a8|   t  |              FUNC|00000028|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.cpp:651
+UartClass::operator bool()|000003d0|   t  |              FUNC|00000004|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.h:293
+_delayMicroseconds  |000003d4|   t  |              FUNC|0000001c|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/wiring.c:823
+micros              |000003f0|   t  |              FUNC|0000007e|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/wiring.c:262
+__LOCK_REGION_LENGTH__|00000400|   A  |            NOTYPE|        |     |*ABS*
+__SIGNATURE_REGION_LENGTH__|00000400|   A  |            NOTYPE|        |     |*ABS*
+__USER_SIGNATURE_REGION_LENGTH__|00000400|   A  |            NOTYPE|        |     |*ABS*
+delay               |0000046e|   t  |              FUNC|00000054|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/wiring.c:724
+TwoWire::flush()    |000004c2|   t  |              FUNC|00000010|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\libraries\Wire\src/twi.c:153
+TwoWire::peek()     |000004d2|   t  |              FUNC|00000028|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\libraries\Wire\src/Wire.cpp:523
+TwoWire::read()     |000004fa|   t  |              FUNC|00000024|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\libraries\Wire\src/Wire.cpp:454
+TwoWire::available()|0000051e|   t  |              FUNC|0000000c|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\libraries\Wire\src/Wire.cpp:423
+TwoWire::write(unsigned char const*, unsigned int)|0000052a|   t  |              FUNC|0000005c|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\libraries\Wire\src/Wire.cpp:399
+TwoWire::write(unsigned char)|00000586|   t  |              FUNC|00000024|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\libraries\Wire\src/Wire.cpp:355
+Print::availableForWrite()|000005aa|   t  |              FUNC|00000006|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore\api/Print.h:65
+TWI_MasterRead      |000005b0|   t  |              FUNC|000000a2|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\libraries\Wire\src/twi.c:374
+TWI_MasterWrite     |00000652|   t  |              FUNC|000000a2|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\libraries\Wire\src/twi.c:275
+Adafruit_SPIDevice::transfer(unsigned char)|000006f4|   t  |              FUNC|0000016e|     |.text	C:\Users\krzys\OneDrive\Dokumenty\Arduino\libraries\Adafruit_BusIO/Adafruit_SPIDevice.cpp:262
+__DATA_REGION_LENGTH__|00000800|   A  |            NOTYPE|        |     |*ABS*
+Adafruit_BMP280_Temp::~Adafruit_BMP280_Temp()|00000862|   t  |              FUNC|00000002|     |.text	C:\Users\krzys\OneDrive\Dokumenty\Arduino\libraries\Adafruit_BMP280_Library/Adafruit_BMP280.h:105
+Adafruit_BMP280_Pressure::~Adafruit_BMP280_Pressure()|00000862|   t  |              FUNC|00000002|     |.text	C:\Users\krzys\OneDrive\Dokumenty\Arduino\libraries\Adafruit_BMP280_Library/Adafruit_BMP280.h:105
+Adafruit_BMP280_Pressure::~Adafruit_BMP280_Pressure()|00000862|   t  |              FUNC|00000002|     |.text
+Adafruit_Sensor::enableAutoRange(bool)|00000864|   t  |              FUNC|00000002|     |.text	C:\Users\krzys\OneDrive\Dokumenty\Arduino\libraries\Adafruit_Unified_Sensor/Adafruit_Sensor.h:174
+SPIClass::endTransaction()|00000866|   t  |              FUNC|00000152|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\libraries\SPI\src/SPI.cpp:275
+SPIClass::beginTransaction(SPISettings)|000009b8|   t  |              FUNC|0000016a|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\libraries\SPI\src/SPI.cpp:264
+UartClass::begin(unsigned long)|00000b22|   t  |              FUNC|00000012|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.h:257
+Adafruit_I2CDevice::begin(bool) [clone .constprop.16]|00000b34|   t  |              FUNC|00000082|     |.text	C:\Users\krzys\OneDrive\Dokumenty\Arduino\libraries\Adafruit_BusIO/Adafruit_I2CDevice.cpp:29
+digitalWrite        |00000bb6|   t  |              FUNC|00000092|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/wiring_digital.c:257
+Adafruit_SPIDevice::write_then_read(unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char) [clone .constprop.36]|00000c48|   t  |              FUNC|00000074|     |.text	C:\Users\krzys\OneDrive\Dokumenty\Arduino\libraries\Adafruit_BusIO/Adafruit_SPIDevice.cpp:391
+pinMode             |00000cbc|   t  |              FUNC|00000058|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/wiring_digital.c:133
+UartClass::begin(unsigned long, unsigned int)|00000d14|   t  |              FUNC|0000016c|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/wiring_digital.c:157
+Print::write(char const*) [clone .part.2] [clone .constprop.52]|00000e80|   t  |              FUNC|00000018|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore\api/Print.h:56
+Print::printNumber(unsigned long, unsigned char) [clone .constprop.48]|00000e98|   t  |              FUNC|0000007a|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore\api/Print.h:56
+Print::println(double, int) [clone .constprop.42]|00000f12|   t  |              FUNC|00000184|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore\api/Print.cpp:230
+Adafruit_I2CDevice::write(unsigned char const*, unsigned int, bool, unsigned char const*, unsigned int) [clone .constprop.34]|00001096|   t  |              FUNC|0000013c|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore\api/Print.cpp:280
+Adafruit_BMP280::write8(unsigned char, unsigned char) [clone .constprop.30]|000011d2|   t  |              FUNC|0000008c|     |.text	C:\Users\krzys\OneDrive\Dokumenty\Arduino\libraries\Adafruit_BMP280_Library/Adafruit_BMP280.cpp:143
+Adafruit_BMP280::setSampling(Adafruit_BMP280::sensor_mode, Adafruit_BMP280::sensor_sampling, Adafruit_BMP280::sensor_sampling, Adafruit_BMP280::sensor_filter, Adafruit_BMP280::standby_duration) [clone .constprop.27]|0000125e|   t  |              FUNC|0000008a|     |.text	C:\Users\krzys\OneDrive\Dokumenty\Arduino\libraries\Adafruit_BusIO/Adafruit_SPIDevice.cpp:314
+Adafruit_I2CDevice::write_then_read(unsigned char const*, unsigned int, unsigned char*, unsigned int, bool) [clone .constprop.33]|000012e8|   t  |              FUNC|00000192|     |.text	C:\Users\krzys\OneDrive\Dokumenty\Arduino\libraries\Adafruit_BMP280_Library/Adafruit_BMP280.cpp:135
+Adafruit_BMP280::read16_LE(unsigned char) [clone .constprop.23]|0000147a|   t  |              FUNC|00000042|     |.text	C:\Users\krzys\OneDrive\Dokumenty\Arduino\libraries\Adafruit_BusIO/Adafruit_I2CDevice.cpp:180
+Adafruit_BMP280::read24(unsigned char)|000014bc|   t  |              FUNC|00000052|     |.text	C:\Users\krzys\OneDrive\Dokumenty\Arduino\libraries\Adafruit_BMP280_Library/Adafruit_BMP280.cpp:184
+Adafruit_BMP280::readTemperature()|0000150e|   t  |              FUNC|00000108|     |.text	C:\Users\krzys\OneDrive\Dokumenty\Arduino\libraries\Adafruit_BMP280_Library/Adafruit_BMP280.cpp:214
+Adafruit_BMP280::readPressure()|00001616|   t  |              FUNC|000003f2|     |.text	C:\Users\krzys\OneDrive\Dokumenty\Arduino\libraries\Adafruit_BMP280_Library/Adafruit_BMP280.cpp:263
+Adafruit_BMP280_Temp::~Adafruit_BMP280_Temp()|00001a08|   t  |              FUNC|00000004|     |.text	C:\Users\krzys\OneDrive\Dokumenty\Arduino\libraries\Adafruit_BMP280_Library/Adafruit_BMP280.cpp:288
+Adafruit_BMP280_Pressure::~Adafruit_BMP280_Pressure()|00001a0c|   t  |              FUNC|00000004|     |.text	C:\Users\krzys\OneDrive\Dokumenty\Arduino\libraries\Adafruit_BMP280_Library/Adafruit_BMP280.cpp:288
+Adafruit_BMP280_Pressure::getEvent(sensors_event_t*)|00001a10|   t  |              FUNC|00000088|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/new.cpp:63
+Adafruit_BMP280_Temp::getEvent(sensors_event_t*)|00001a98|   t  |              FUNC|0000007e|     |.text	C:\Users\krzys\OneDrive\Dokumenty\Arduino\libraries\Adafruit_BMP280_Library/Adafruit_BMP280.cpp:487
+Adafruit_BMP280_Pressure::getSensor(sensor_t*)|00001b16|   t  |              FUNC|0000009e|     |.text	C:\Users\krzys\OneDrive\Dokumenty\Arduino\libraries\Adafruit_BMP280_Library/Adafruit_BMP280.cpp:447
+Adafruit_BMP280_Temp::getSensor(sensor_t*)|00001bb4|   t  |              FUNC|0000009e|     |.text	C:\Users\krzys\OneDrive\Dokumenty\Arduino\libraries\Adafruit_BMP280_Library/Adafruit_BMP280.cpp:468
+__vector_18         |00001c52|   T  |              FUNC|0000000a|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART0.cpp:69
+__vector_17         |00001c5c|   T  |              FUNC|0000000a|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART0.cpp:51
+__vector_19         |00001c66|   T  |              FUNC|00000006|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART0.cpp:26
+_do_dre             |00001c6c|   t  |            NOTYPE|        |     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART0.cpp:31
+_do_dre()           |00001c6c|   T  |              FUNC|0000005e|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.cpp:224
+_poll_dre           |00001c7c|   t  |            NOTYPE|        |     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.cpp:307
+_done_dre_irq       |00001caa|   t  |            NOTYPE|        |     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.cpp:307
+_do_rxc             |00001cca|   t  |            NOTYPE|        |     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.cpp:307
+_do_rxc()           |00001cca|   T  |              FUNC|00000048|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.cpp:124
+_end_rxc            |00001cfe|   t  |            NOTYPE|        |     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.cpp:175
+_do_txc             |00001d12|   t  |            NOTYPE|        |     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.cpp:175
+_do_txc()           |00001d12|   T  |              FUNC|00000026|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.cpp:82
+_txc_flush_rx       |00001d1c|   t  |            NOTYPE|        |     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART.cpp:105
+__vector_25         |00001d38|   T  |              FUNC|00000050|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/wiring.c:138
+__vector_14         |00001d88|   T  |              FUNC|00000134|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\libraries\Wire\src/Wire.cpp:776
+global constructors keyed to 65535_0_Altimetr_SPI.ino.cpp.o.3749|00001ebc|   t  |              FUNC|000001e8|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\libraries\Wire\src/twi.c:708
+main                |000020a4|   T  |              FUNC|000004ec|     |.text	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/main.cpp:49
+_GLOBAL__sub_D_bmp  |00002590|   t  |              FUNC|0000006a|     |.text
+eeprom_read_dword   |000025fa|   T  |              FUNC|0000000c|     |.text	/home/toolsbuild/workspace/avr8-devices-pack/src/avr-libc/avr/lib/avrxmega3/attiny1624/../../../../libc/misc/eerd_dword.S:50
+eeprom_read_float   |000025fa|   T  |            NOTYPE|        |     |.text	/home/toolsbuild/workspace/avr8-devices-pack/src/avr-libc/avr/lib/avrxmega3/attiny1624/../../../../libc/misc/eerd_dword.S:50
+eeprom_update_dword |00002606|   T  |              FUNC|00000010|     |.text	/home/toolsbuild/workspace/avr8-devices-pack/src/avr-libc/avr/lib/avrxmega3/attiny1624/../../../../libc/misc/eeupd_dword.S:48
+eeprom_update_float |00002606|   T  |            NOTYPE|        |     |.text	/home/toolsbuild/workspace/avr8-devices-pack/src/avr-libc/avr/lib/avrxmega3/attiny1624/../../../../libc/misc/eeupd_dword.S:48
+eeprom_read_byte    |00002616|   T  |              FUNC|00000010|     |.text	/home/toolsbuild/workspace/avr8-devices-pack/src/avr-libc/avr/lib/avrxmega3/attiny1624/../../../../libc/misc/eerd_byte.S:51
+eeprom_mapen        |0000261e|   T  |            NOTYPE|        |     |.text	/home/toolsbuild/workspace/avr8-devices-pack/src/avr-libc/avr/lib/avrxmega3/attiny1624/../../../../libc/misc/eerd_byte.S:83
+eeprom_update_byte  |00002626|   T  |              FUNC|00000012|     |.text	/home/toolsbuild/workspace/avr8-devices-pack/src/avr-libc/avr/lib/avrxmega3/attiny1624/../../../../libc/misc/eeupd_byte.S:48
+eeprom_update_r18   |00002628|   T  |            NOTYPE|        |     |.text	/home/toolsbuild/workspace/avr8-devices-pack/src/avr-libc/avr/lib/avrxmega3/attiny1624/../../../../libc/misc/eeupd_byte.S:54
+eeprom_write_byte   |00002638|   T  |              FUNC|00000028|     |.text	/home/toolsbuild/workspace/avr8-devices-pack/src/avr-libc/avr/lib/avrxmega3/attiny1624/../../../../libc/misc/eewr_byte.S:42
+eeprom_write_r18    |0000263a|   T  |            NOTYPE|        |     |.text	/home/toolsbuild/workspace/avr8-devices-pack/src/avr-libc/avr/lib/avrxmega3/attiny1624/../../../../libc/misc/eewr_byte.S:66
+__prologue_saves__  |00002660|   T  |            NOTYPE|00000032|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2169
+__epilogue_restores__|00002692|   T  |            NOTYPE|00000030|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2222
+__subsf3            |000026c2|   T  |              FUNC|0000000a|     |.text
+__addsf3            |000026c4|   T  |            NOTYPE|        |     |.text
+__addsf3x           |000026e6|   T  |              FUNC|000000cc|     |.text
+__cmpsf2            |0000278c|   T  |              FUNC|00000008|     |.text
+__eqsf2             |0000278c|   T  |            NOTYPE|        |     |.text
+__lesf2             |0000278c|   T  |            NOTYPE|        |     |.text
+__ltsf2             |0000278c|   T  |            NOTYPE|        |     |.text
+__nesf2             |0000278c|   T  |            NOTYPE|        |     |.text
+__divsf3            |00002794|   T  |              FUNC|00000004|     |.text
+__divsf3x           |000027ae|   T  |              FUNC|000000dc|     |.text
+__divsf3_pse        |000027b2|   T  |            NOTYPE|        |     |.text
+__fixunssfsi        |00002864|   T  |              FUNC|00000058|     |.text
+__floatdisf         |000028bc|   T  |              FUNC|00000008|     |.text
+__floatunsisf       |000028c4|   T  |              FUNC|0000007a|     |.text
+__floatsisf         |000028c8|   T  |            NOTYPE|        |     |.text
+__floatundisf       |0000293e|   T  |              FUNC|0000007c|     |.text
+__fp_di2sf          |00002940|   T  |            NOTYPE|        |     |.text
+__fp_cmp            |000029ba|   T  |              FUNC|00000048|     |.text
+__fp_inf            |00002a02|   T  |              FUNC|0000000c|     |.text
+__fp_nan            |00002a0e|   T  |              FUNC|00000006|     |.text
+__fp_negdi          |00002a14|   T  |              FUNC|00000020|     |.text
+__fp_pscA           |00002a34|   T  |              FUNC|0000000e|     |.text
+__fp_pscB           |00002a42|   T  |              FUNC|0000000e|     |.text
+__fp_round          |00002a50|   T  |              FUNC|00000022|     |.text
+__fp_split3         |00002a72|   T  |              FUNC|00000044|     |.text
+__fp_splitA         |00002a82|   T  |            NOTYPE|        |     |.text
+__fp_zero           |00002ab6|   T  |              FUNC|0000000e|     |.text
+__fp_szero          |00002ab8|   T  |            NOTYPE|        |     |.text
+__gesf2             |00002ac4|   T  |              FUNC|00000008|     |.text
+__gtsf2             |00002ac4|   T  |            NOTYPE|        |     |.text
+__mulsf3            |00002acc|   T  |              FUNC|00000004|     |.text
+__mulsf3x           |00002ae4|   T  |              FUNC|000000d2|     |.text
+__mulsf3_pse        |00002ae8|   T  |            NOTYPE|        |     |.text
+pow                 |00002b92|   T  |              FUNC|00000098|     |.text
+__unordsf2          |00002c2a|   T  |              FUNC|00000008|     |.text
+exp                 |00002c3c|   T  |              FUNC|00000074|     |.text
+__fp_powser         |00002c94|   T  |              FUNC|0000004a|     |.text
+inverse             |00002cde|   T  |              FUNC|0000000e|     |.text
+ldexp               |00002cf0|   T  |              FUNC|00000074|     |.text
+log                 |00002d62|   T  |              FUNC|000000a0|     |.text
+modf                |00002de2|   T  |              FUNC|00000066|     |.text
+modff               |00002de2|   T  |            NOTYPE|        |     |.text
+__fp_mpack          |00002e48|   T  |              FUNC|0000001c|     |.text
+__fp_mpack_finite   |00002e4c|   T  |            NOTYPE|        |     |.text
+__mulsi3            |00002e64|   T  |            NOTYPE|0000001e|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:648
+__udivmodsi4        |00002e82|   T  |            NOTYPE|00000044|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1638
+__udivmodsi4_loop   |00002e8e|   t  |            NOTYPE|        |     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1646
+__udivmodsi4_ep     |00002ea8|   t  |            NOTYPE|        |     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1660
+__muluhisi3         |00002ec6|   T  |            NOTYPE|00000014|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:626
+__mulshisi3         |00002eda|   T  |            NOTYPE|00000004|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:603
+__mulohisi3         |00002ede|   T  |            NOTYPE|00000008|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:613
+__muldi3            |00002ee6|   T  |            NOTYPE|00000090|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:617
+__muldi3_6          |00002f76|   T  |            NOTYPE|00000010|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:973
+__moddi3            |00002f86|   T  |            NOTYPE|00000004|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1964
+__divdi3            |00002f8a|   T  |            NOTYPE|00000002|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1972
+__divdi3_moddi3     |00002f8c|   T  |            NOTYPE|00000050|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1977
+__umoddi3           |00002fdc|   T  |            NOTYPE|00000004|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1806
+__udivdi3           |00002fe0|   T  |            NOTYPE|00000002|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1814
+__udivdi3_umoddi3   |00002fe2|   T  |            NOTYPE|00000014|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1818
+__udivmod64         |00002ff6|   T  |            NOTYPE|000000a2|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:1842
+__negdi2            |00003098|   T  |            NOTYPE|00000020|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2117
+__ashldi3           |000030b8|   T  |            NOTYPE|00000032|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:3169
+__ashrdi3           |000030ea|   T  |            NOTYPE|00000004|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:3122
+__lshrdi3           |000030ee|   T  |            NOTYPE|00000036|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:3131
+__adddi3            |00003124|   T  |            NOTYPE|00000012|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2051
+__subdi3            |00003136|   T  |            NOTYPE|00000012|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2080
+__cmpdi2_s8         |00003148|   T  |            NOTYPE|00000018|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2102
+__tablejump2__      |00003160|   T  |            NOTYPE|0000000c|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2296
+__umulhisi3         |0000316c|   T  |            NOTYPE|0000001e|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:564
+malloc              |0000318a|   T  |              FUNC|00000138|     |.text
+free                |000032c2|   T  |              FUNC|00000112|     |.text
+strncpy             |000033d4|   T  |              FUNC|0000001e|     |.text
+__do_global_dtors   |000033f2|   T  |            NOTYPE|00000014|     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2496
+_exit               |000033f2|   T  |            NOTYPE|        |     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2496
+exit                |000033f2|   W  |            NOTYPE|        |     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2496
+__stop_program      |00003408|   t  |            NOTYPE|        |     |.text	/home/admin/build/toolchain-avr-special/gcc-build/avr/avrxmega3/libgcc/../../../../gcc/libgcc/config/avr/lib1funcs.S:2280
+_etext              |0000340a|   T  |            NOTYPE|        |     |.text
+__data_load_start   |000034c4|   A  |            NOTYPE|        |     |*ABS*
+__data_load_end     |000034ca|   A  |            NOTYPE|        |     |*ABS*
+__stack             |00003fff|   W  |            NOTYPE|        |     |*ABS*
+__TEXT_REGION_LENGTH__|00004000|   A  |            NOTYPE|        |     |*ABS*
+__RODATA_PM_OFFSET__|00008000|   A  |            NOTYPE|        |     |*ABS*
+digital_pin_to_timer|0000b40a|   r  |            OBJECT|0000000c|     |.rodata	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\variants\txy4/pins_arduino.h:255
+digital_pin_to_bit_position|0000b416|   r  |            OBJECT|0000000c|     |.rodata	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\variants\txy4/pins_arduino.h:218
+_usart_pins         |0000b422|   r  |            OBJECT|00000008|     |.rodata
+vtable for UartClass|0000b42a|   r  |            OBJECT|0000001a|     |.rodata
+vtable for TwoWire  |0000b444|   r  |            OBJECT|00000012|     |.rodata
+digital_pin_to_bit_mask|0000b456|   r  |            OBJECT|0000000c|     |.rodata	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\variants\txy4/pins_arduino.h:237
+digital_pin_to_port |0000b462|   r  |            OBJECT|0000000c|     |.rodata	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\variants\txy4/pins_arduino.h:199
+vtable for Adafruit_BMP280_Pressure|0000b46e|   r  |            OBJECT|0000000e|     |.rodata
+vtable for Adafruit_BMP280_Temp|0000b47c|   r  |            OBJECT|0000000e|     |.rodata
+__DATA_REGION_ORIGIN__|00803800|   A  |            NOTYPE|        |     |*ABS*
+__data_start        |00803800|   D  |            NOTYPE|        |     |.data
+__malloc_heap_end   |00803800|   D  |            OBJECT|00000002|     |.data
+__malloc_heap_start |00803802|   D  |            OBJECT|00000002|     |.data
+__malloc_margin     |00803804|   D  |            OBJECT|00000002|     |.data
+__bss_start         |00803806|   B  |            NOTYPE|        |     |.bss
+__data_end          |00803806|   D  |            NOTYPE|        |     |.data
+_edata              |00803806|   D  |            NOTYPE|        |     |.data
+timer_millis        |00803806|   b  |            OBJECT|00000004|     |.bss	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/wiring.c:65
+maxHightRAM         |0080380a|   b  |            OBJECT|00000004|     |.bss	g:\Studia\PUT Rocket LAB\altimetr\Altimetr_SPI/Altimetr_SPI.ino:25
+initialHight        |0080380e|   b  |            OBJECT|00000004|     |.bss	g:\Studia\PUT Rocket LAB\altimetr\Altimetr_SPI/Altimetr_SPI.ino:26
+t                   |00803812|   b  |            OBJECT|00000008|     |.bss	g:\Studia\PUT Rocket LAB\altimetr\Altimetr_SPI/Altimetr_SPI.ino:27
+Serial              |0080381a|   b  |            OBJECT|00000095|     |.bss	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\cores\megatinycore/UART0.cpp:81
+Wire                |008038af|   b  |            OBJECT|00000058|     |.bss	C:\Users\krzys\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.5.10\libraries\Wire\src/Wire.cpp:797
+DEFAULT_SPI_SETTINGS|00803907|   b  |            OBJECT|00000002|     |.bss
+bmp                 |00803909|   b  |            OBJECT|0000002d|     |.bss	g:\Studia\PUT Rocket LAB\altimetr\Altimetr_SPI/Altimetr_SPI.ino:23
+__brkval            |00803936|   B  |            OBJECT|00000002|     |.bss
+__flp               |00803938|   B  |            OBJECT|00000002|     |.bss
+__bss_end           |0080393a|   B  |            NOTYPE|        |     |.bss
+__heap_start        |0080393a|   B  |            NOTYPE|        |     |.bss
+_end                |0080393a|   B  |            NOTYPE|        |     |.bss
+maxHightEEM         |00810000|   d  |            OBJECT|00000004|     |.eeprom	g:\Studia\PUT Rocket LAB\altimetr\Altimetr_SPI/Altimetr_SPI.ino:24
+__eeprom_end        |00810004|   D  |            NOTYPE|        |     |.eeprom
