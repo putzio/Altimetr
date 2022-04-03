@@ -11412,6 +11412,11 @@ CHIP_SELECT PULLUP???</text>
 <label x="50.8" y="91.44" size="1.27" layer="95" rot="R180" xref="yes" grouprefs="BMP280"/>
 <pinref part="JP2" gate="A" pin="6"/>
 </segment>
+<segment>
+<pinref part="JP4" gate="A" pin="3"/>
+<wire x1="-43.18" y1="48.26" x2="-50.8" y2="48.26" width="0.1524" layer="91"/>
+<label x="-50.8" y="48.26" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="MOSI" class="0">
 <segment>
@@ -11423,11 +11428,6 @@ CHIP_SELECT PULLUP???</text>
 <wire x1="58.42" y1="96.52" x2="50.8" y2="96.52" width="0.1524" layer="91" grouprefs="BMP280"/>
 <label x="50.8" y="96.52" size="1.27" layer="95" rot="R180" xref="yes" grouprefs="BMP280"/>
 <pinref part="JP2" gate="A" pin="4"/>
-</segment>
-<segment>
-<wire x1="-43.18" y1="48.26" x2="-50.8" y2="48.26" width="0.1524" layer="91" grouprefs="FLASH"/>
-<label x="-50.8" y="48.26" size="1.27" layer="95" rot="R180" xref="yes" grouprefs="FLASH"/>
-<pinref part="JP4" gate="A" pin="3"/>
 </segment>
 <segment>
 <wire x1="-43.18" y1="40.64" x2="-50.8" y2="40.64" width="0.1524" layer="91" grouprefs="FLASH"/>
