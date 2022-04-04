@@ -11013,8 +11013,8 @@ Source: &lt;a href="http://www.mouser.com/ds/2/268/mic5365-779177.pdf"&gt; Datas
 <part name="GND12" library="PUTRocketLab_supply" deviceset="GND" device=""/>
 <part name="U$8" library="supply2" deviceset="+3.3V" device=""/>
 <part name="GND1" library="PUTRocketLab_supply" deviceset="GND" device=""/>
-<part name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X6" device="" package3d_urn="urn:adsk.eagle:package:22472/2"/>
-<part name="JP4" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X6" device="" package3d_urn="urn:adsk.eagle:package:22472/2"/>
+<part name="BMP_280" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X6" device="" package3d_urn="urn:adsk.eagle:package:22472/2"/>
+<part name="FLASH_" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X6" device="" package3d_urn="urn:adsk.eagle:package:22472/2"/>
 <part name="U$5" library="supply2" deviceset="+3.3V" device=""/>
 <part name="U$7" library="supply2" deviceset="+3.3V" device=""/>
 <part name="GND5" library="PUTRocketLab_supply" deviceset="GND" device=""/>
@@ -11141,11 +11141,11 @@ CHIP_SELECT PULLUP???</text>
 <instance part="GND1" gate="1" x="-157.48" y="39.37" smashed="yes" grouprefs="READ_DATA">
 <attribute name="VALUE" x="-160.02" y="36.83" size="1.778" layer="96"/>
 </instance>
-<instance part="JP2" gate="A" x="60.96" y="96.52" smashed="yes" grouprefs="BMP280">
+<instance part="BMP_280" gate="A" x="60.96" y="96.52" smashed="yes" grouprefs="BMP280">
 <attribute name="NAME" x="54.61" y="107.315" size="1.778" layer="95"/>
 <attribute name="VALUE" x="54.61" y="86.36" size="1.778" layer="96"/>
 </instance>
-<instance part="JP4" gate="A" x="-40.64" y="45.72" smashed="yes" grouprefs="FLASH">
+<instance part="FLASH_" gate="A" x="-40.64" y="45.72" smashed="yes" grouprefs="FLASH">
 <attribute name="NAME" x="-46.99" y="56.515" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-46.99" y="35.56" size="1.778" layer="96"/>
 </instance>
@@ -11263,14 +11263,14 @@ CHIP_SELECT PULLUP???</text>
 <wire x1="-99.06" y1="45.72" x2="-88.9" y2="45.72" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="JP2" gate="A" pin="2"/>
+<pinref part="BMP_280" gate="A" pin="2"/>
 <pinref part="GND5" gate="1" pin="GND"/>
 <wire x1="38.1" y1="101.6" x2="58.42" y2="101.6" width="0.1524" layer="91" grouprefs="BMP280"/>
 </segment>
 <segment>
 <pinref part="GND8" gate="1" pin="GND"/>
 <wire x1="-60.96" y1="43.18" x2="-60.96" y2="45.72" width="0.1524" layer="91" grouprefs="FLASH"/>
-<pinref part="JP4" gate="A" pin="4"/>
+<pinref part="FLASH_" gate="A" pin="4"/>
 <wire x1="-60.96" y1="45.72" x2="-43.18" y2="45.72" width="0.1524" layer="91" grouprefs="FLASH"/>
 </segment>
 </net>
@@ -11328,12 +11328,12 @@ CHIP_SELECT PULLUP???</text>
 <wire x1="-99.06" y1="50.8" x2="-88.9" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="JP2" gate="A" pin="1"/>
+<pinref part="BMP_280" gate="A" pin="1"/>
 <wire x1="58.42" y1="104.14" x2="50.8" y2="104.14" width="0.1524" layer="91" grouprefs="BMP280"/>
 <pinref part="U$5" gate="G$1" pin="+3.3V"/>
 </segment>
 <segment>
-<pinref part="JP4" gate="A" pin="1"/>
+<pinref part="FLASH_" gate="A" pin="1"/>
 <wire x1="-43.18" y1="53.34" x2="-50.8" y2="53.34" width="0.1524" layer="91" grouprefs="FLASH"/>
 <pinref part="U$7" gate="G$1" pin="+3.3V"/>
 </segment>
@@ -11393,12 +11393,12 @@ CHIP_SELECT PULLUP???</text>
 <segment>
 <wire x1="58.42" y1="99.06" x2="50.8" y2="99.06" width="0.1524" layer="91" grouprefs="BMP280"/>
 <label x="50.8" y="99.06" size="1.27" layer="95" rot="R180" xref="yes" grouprefs="BMP280"/>
-<pinref part="JP2" gate="A" pin="3"/>
+<pinref part="BMP_280" gate="A" pin="3"/>
 </segment>
 <segment>
 <wire x1="-43.18" y1="43.18" x2="-50.8" y2="43.18" width="0.1524" layer="91" grouprefs="FLASH"/>
 <label x="-50.8" y="43.18" size="1.27" layer="95" rot="R180" xref="yes" grouprefs="FLASH"/>
-<pinref part="JP4" gate="A" pin="5"/>
+<pinref part="FLASH_" gate="A" pin="5"/>
 </segment>
 </net>
 <net name="MISO" class="0">
@@ -11410,10 +11410,10 @@ CHIP_SELECT PULLUP???</text>
 <segment>
 <wire x1="58.42" y1="91.44" x2="50.8" y2="91.44" width="0.1524" layer="91" grouprefs="BMP280"/>
 <label x="50.8" y="91.44" size="1.27" layer="95" rot="R180" xref="yes" grouprefs="BMP280"/>
-<pinref part="JP2" gate="A" pin="6"/>
+<pinref part="BMP_280" gate="A" pin="6"/>
 </segment>
 <segment>
-<pinref part="JP4" gate="A" pin="3"/>
+<pinref part="FLASH_" gate="A" pin="3"/>
 <wire x1="-43.18" y1="48.26" x2="-50.8" y2="48.26" width="0.1524" layer="91"/>
 <label x="-50.8" y="48.26" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -11427,12 +11427,12 @@ CHIP_SELECT PULLUP???</text>
 <segment>
 <wire x1="58.42" y1="96.52" x2="50.8" y2="96.52" width="0.1524" layer="91" grouprefs="BMP280"/>
 <label x="50.8" y="96.52" size="1.27" layer="95" rot="R180" xref="yes" grouprefs="BMP280"/>
-<pinref part="JP2" gate="A" pin="4"/>
+<pinref part="BMP_280" gate="A" pin="4"/>
 </segment>
 <segment>
 <wire x1="-43.18" y1="40.64" x2="-50.8" y2="40.64" width="0.1524" layer="91" grouprefs="FLASH"/>
 <label x="-50.8" y="40.64" size="1.27" layer="95" rot="R180" xref="yes" grouprefs="FLASH"/>
-<pinref part="JP4" gate="A" pin="6"/>
+<pinref part="FLASH_" gate="A" pin="6"/>
 </segment>
 </net>
 <net name="CS_BMP" class="0">
@@ -11444,7 +11444,7 @@ CHIP_SELECT PULLUP???</text>
 <segment>
 <wire x1="58.42" y1="93.98" x2="50.8" y2="93.98" width="0.1524" layer="91" grouprefs="BMP280"/>
 <label x="50.8" y="93.98" size="1.27" layer="95" rot="R180" xref="yes" grouprefs="BMP280"/>
-<pinref part="JP2" gate="A" pin="5"/>
+<pinref part="BMP_280" gate="A" pin="5"/>
 </segment>
 </net>
 <net name="CS_FLASH" class="0">
@@ -11456,7 +11456,7 @@ CHIP_SELECT PULLUP???</text>
 <segment>
 <wire x1="-43.18" y1="50.8" x2="-50.8" y2="50.8" width="0.1524" layer="91" grouprefs="FLASH"/>
 <label x="-50.8" y="50.8" size="1.27" layer="95" rot="R180" xref="yes" grouprefs="FLASH"/>
-<pinref part="JP4" gate="A" pin="2"/>
+<pinref part="FLASH_" gate="A" pin="2"/>
 </segment>
 </net>
 <net name="WP" class="0">
