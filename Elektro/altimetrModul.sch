@@ -11459,13 +11459,6 @@ CHIP_SELECT PULLUP???</text>
 <pinref part="FLASH_" gate="A" pin="2"/>
 </segment>
 </net>
-<net name="WP" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="PA4"/>
-<wire x1="-53.34" y1="101.6" x2="-55.88" y2="101.6" width="0.1524" layer="91" grouprefs="ATTINY"/>
-<label x="-55.88" y="101.6" size="1.778" layer="95" rot="R180" xref="yes" grouprefs="ATTINY"/>
-</segment>
-</net>
 </nets>
 </sheet>
 </sheets>
