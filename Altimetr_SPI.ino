@@ -108,18 +108,17 @@ void FindEmptyAdress(volatile uint32_t *startingAdress, bool flashState = flashO
   }
 }
 
-void setup()
+void UartInit(uint16_t baud)
 {
-  //Set all pins as OUTPUT:
-  for (int i = 0; i < 11; i++) 
-    pinMode(i, OUTPUT);
-  
-  pinMode(SEND_DATA_UART_EN, INPUT_PULLUP);
-  Serial.begin(115200);
+  Serial.begin(baud);
+  while (!Serial.available() && !digitalRead(SEND_DATA_UART_EN))
+    Serial.println("Waiting for connection...");
+  if(Serial.available())
+    Serial.println("Device connected");
+}
 
-  while (!Serial.available())//and if&&!digitalRead(SEND_DATA_UART_EN)
-    Serial.println("START");
-
+void BMP280Init()
+{
   if (!bmp.begin())
   {
     Serial.println(F("Could not find a valid BMP280 sensor, check wiring or "
@@ -143,6 +142,18 @@ void setup()
                   Adafruit_BMP280::SAMPLING_X4,     /* Pressure oversampling */
                   Adafruit_BMP280::FILTER_X4,       /* Filtering. */
                   Adafruit_BMP280::STANDBY_MS_125); /* Standby time. */
+}
+
+void setup()
+{
+  //Set all pins as OUTPUT:
+  for (int i = 0; i < 11; i++) 
+    pinMode(i, OUTPUT);
+  
+  pinMode(SEND_DATA_UART_EN, INPUT_PULLUP);
+  UartInit(115200);
+
+  BMP280Init();
 
   initialHight = bmp.readAltitude(SEA_LEVEL_HPA);
   if (Serial.available())
@@ -179,11 +190,13 @@ void setup()
 
   volatile uint32_t start;
   FindEmptyAdress(&start);
-
-  Serial.print("START ADDR:\t");
-  Serial.println(start);
-  Serial.print("How many measurements are stored:\t");
-  Serial.println(start / 8);
+  if(Serial.available())
+  {
+    Serial.print("START ADDR:\t");
+    Serial.println(start);
+    Serial.print("How many measurements are stored:\t");
+    Serial.println(start / 8);
+  }
 }
 
 void loop()
@@ -221,3 +234,18 @@ void loop()
     }
   }
 }
+/*
+To do:
+
+->MIKRO
+Czyszczenie flasha na komendę z UARTa
+Szybkie wysyłanie danych do PC
+Wpisywanie do pamięci ciśnienia przez UART
+
+->PC
+Komunikacja
+Wykres
+Zapis do pliku .csv
+Wysyłanie komendy kasowania i ustawienia ciśnienia
+Obliczanie ciśnienia na poziomie morza na podstawie aktualnej wysokości i wskazań z BMP280 
+*/
