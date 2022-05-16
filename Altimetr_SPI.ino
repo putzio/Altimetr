@@ -4,6 +4,7 @@
 #include <Adafruit_BMP280.h>
 #include <SPIMemory.h>
 #include <SPI.h>
+#include <avr/io.h>
 
 // pinout
 // CS -> write LOW to choose the salve
@@ -21,6 +22,8 @@
 
 #define SEA_LEVEL_HPA 1020.0
 #define TIME_INTERVAL 1000 // ms
+#define SEA_LEVEL_ADRESS 0x00 
+#define START_ADRESS SEA_LEVEL_ADRESS
 
 #define F_SPI 1000000 // 1 MHz -> the same frequency is required, so we take the lower one from BMP and set it to FLASH
 
@@ -31,6 +34,8 @@ float initialHight;
 uint64_t t = 0; // timer updated with millis()
 bool flashOn = false;
 uint32_t addr = 0x00;
+
+float seaLevel;
 
 void FlashBegin(bool *flashState = &flashOn)
 {
@@ -152,10 +157,14 @@ void setup()
   
   pinMode(SEND_DATA_UART_EN, INPUT_PULLUP);
   UartInit(115200);
+  FlashBegin();
+  seaLevel = flash->readFloat(SEA_LEVEL_ADRESS);
+  if(seaLevel<100.0)
+    seaLevel = SEA_LEVEL_HPA; 
+  FlashEnd();
 
-  BMP280Init();
-
-  initialHight = bmp.readAltitude(SEA_LEVEL_HPA);
+  BMP280Init();  
+  initialHight = bmp.readAltitude(seaLevel);
   if (Serial.available())
   {
     Serial.print("INITIAL HIGHT:\t");
@@ -179,7 +188,7 @@ void setup()
   //   Serial.println(flash.readFloat(0x00));
   //   unsigned long size = flash.getCapacity();
   //   Serial.print("Flash Memory has ");
-  //   Serial.print(size);
+  //   Serial.p/rint(size);
   //   Serial.println(" bytes.");
   // }
 
@@ -207,24 +216,47 @@ void loop()
 
     if (!digitalRead(SEND_DATA_UART_EN))
     {
-      addr = 0x00;
+      addr = 0x04;
       FlashBegin();
+      String recivedData = Serial.readString();
+      if(recivedData != "-1")
+        {
+          if(recivedData.substring(0,3) =="#P:")
+          {
+            //Change Preassure
+            float preassure =  recivedData.substring(3,recivedData.indexOf("&")).toFloat();
+            flash->writeFloat(SEA_LEVEL_ADRESS, preassure);
+          }
+          if(recivedData.substring(0,3) =="###")
+          {
+            //Clear Flash
+            flash->eraseChip();
+          }
+        }
+      
       uint32_t flashCapacity = flash->getCapacity();
+      uint32_t flashTime = 0,newFlashTime = 0;
       while(addr<flashCapacity)
       {
-        Serial.print("ADDR:\t");
-        Serial.print(addr, HEX);
-        Serial.print("\tTime:\t");
-        Serial.print(flash->readLong(addr));
+        newFlashTime =  flash->readLong(addr);
+        if(flashTime>newFlashTime)
+          Serial.println("end");//the new series of measurements has started
+        flashTime = newFlashTime;
+        // Serial.print("ADDR:\t");
+        // Serial.print(addr, HEX);
+        Serial.print("\t#t:\t");
+        Serial.print(newFlashTime);
         addr += 4;
-        Serial.print("\tHight:\t");
-        Serial.println(flash->readFloat(addr));
-        addr += 4;
+        Serial.print("\t&h:\t");
+        Serial.print(flash->readFloat(addr));
+        Serial.println("$");
+        addr += 4;        
       }      
+      Serial.println("END");      
     }
     else 
     {
-      float hight = bmp.readAltitude(SEA_LEVEL_HPA); // - initialHight;
+      float hight = bmp.readAltitude(seaLevel); // - initialHight;
       // FlashBegin();
       //  flash->writeLong(addr, millis());
       addr += 4;
@@ -239,13 +271,12 @@ To do:
 
 ->MIKRO
 Czyszczenie flasha na komendę z UARTa
-Szybkie wysyłanie danych do PC
 Wpisywanie do pamięci ciśnienia przez UART
+kilka pomiarów na jednej pamięci
 
 ->PC
-Komunikacja
-Wykres
-Zapis do pliku .csv
+Komunikacja -> suma kontrolna, arbitraż
+Wykres -> dopasowanie osi
 Wysyłanie komendy kasowania i ustawienia ciśnienia
 Obliczanie ciśnienia na poziomie morza na podstawie aktualnej wysokości i wskazań z BMP280 
 */
