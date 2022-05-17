@@ -6,11 +6,6 @@
 #include <SPI.h>
 #include <avr/io.h>
 
-
-
-//test
-
-
 // pinout
 // CS -> write LOW to choose the salve
 #define WRITE_PROTECTION 0  // WP - PA4
