@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="50" unitdist="mil" unit="mm" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mm"/>
@@ -162,7 +162,7 @@
 <layer number="255" name="routoute" color="7" fill="1" visible="no" active="no"/>
 </layers>
 <board>
-<fusionsync huburn="a.cGVyc29uYWw6dWUyY2MyMjY2" projecturn="a.cGVyc29uYWw6dWUyY2MyMjY2IzIwMjIwMjAzNDkyOTkzNjI2" f3durn="urn:adsk.wipprod:dm.lineage:6XJVzLSiSGiofooIHjhxFA" pcbguid="" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="3a3cebde-8b17-47f4-82d7-efb477a047f7" lastsyncedrevisionid="3a3cebde-8b17-47f4-82d7-efb477a047f7" lastboardhashguid="76cd61b1-115d-2d44-1cd2-4e811bcb9771" lastpushedtime="2022-02-27T16:26:27Z" linktopcb3d="false"/>
+<fusionsync huburn="a.cGVyc29uYWw6dWUyY2MyMjY2" projecturn="a.cGVyc29uYWw6dWUyY2MyMjY2IzIwMjIwMjAzNDkyOTkzNjI2" f3durn="urn:adsk.wipprod:dm.lineage:6XJVzLSiSGiofooIHjhxFA" pcbguid="" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="3a3cebde-8b17-47f4-82d7-efb477a047f7" lastsyncedrevisionid="3a3cebde-8b17-47f4-82d7-efb477a047f7" lastboardhashguid="76cd61b1-115d-2d44-1cd2-4e811bcb9771" lastpushedtime="2022-02-27T16:26:27Z" linktopcb3d="true"/>
 <plain>
 <wire x1="-1.27" y1="1.27" x2="34.27" y2="1.27" width="0" layer="20"/>
 <wire x1="34.27" y1="1.27" x2="34.27" y2="20.625" width="0" layer="20"/>
@@ -185,46 +185,6 @@ Kamil Urban</text>
 <hole x="19.939" y="18.161" drill="3"/>
 </plain>
 <libraries>
-<library name="ATTINY1624-SSU">
-<description>&lt;Microchip ATTINY1624-SSU, 8bit AVR Microcontroller, ATtiny1624, 20MHz, 16 kB Flash, 14-Pin SOIC14&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
-<packages>
-<package name="SOIC127P600X175-14N">
-<description>&lt;b&gt;14 Lead Small Outline (SL) Narrow SOIC&lt;/b&gt;&lt;br&gt;
-</description>
-<smd name="1" x="-2.7" y="3.81" dx="1.5" dy="0.65" layer="1"/>
-<smd name="2" x="-2.7" y="2.54" dx="1.5" dy="0.65" layer="1"/>
-<smd name="3" x="-2.7" y="1.27" dx="1.5" dy="0.65" layer="1"/>
-<smd name="4" x="-2.7" y="0" dx="1.5" dy="0.65" layer="1"/>
-<smd name="5" x="-2.7" y="-1.27" dx="1.5" dy="0.65" layer="1"/>
-<smd name="6" x="-2.7" y="-2.54" dx="1.5" dy="0.65" layer="1"/>
-<smd name="7" x="-2.7" y="-3.81" dx="1.5" dy="0.65" layer="1"/>
-<smd name="8" x="2.7" y="-3.81" dx="1.5" dy="0.65" layer="1"/>
-<smd name="9" x="2.7" y="-2.54" dx="1.5" dy="0.65" layer="1"/>
-<smd name="10" x="2.7" y="-1.27" dx="1.5" dy="0.65" layer="1"/>
-<smd name="11" x="2.7" y="0" dx="1.5" dy="0.65" layer="1"/>
-<smd name="12" x="2.7" y="1.27" dx="1.5" dy="0.65" layer="1"/>
-<smd name="13" x="2.7" y="2.54" dx="1.5" dy="0.65" layer="1"/>
-<smd name="14" x="2.7" y="3.81" dx="1.5" dy="0.65" layer="1"/>
-<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-3.7" y1="4.575" x2="3.7" y2="4.575" width="0.05" layer="51"/>
-<wire x1="3.7" y1="4.575" x2="3.7" y2="-4.575" width="0.05" layer="51"/>
-<wire x1="3.7" y1="-4.575" x2="-3.7" y2="-4.575" width="0.05" layer="51"/>
-<wire x1="-3.7" y1="-4.575" x2="-3.7" y2="4.575" width="0.05" layer="51"/>
-<wire x1="-1.95" y1="4.325" x2="1.95" y2="4.325" width="0.1" layer="51"/>
-<wire x1="1.95" y1="4.325" x2="1.95" y2="-4.325" width="0.1" layer="51"/>
-<wire x1="1.95" y1="-4.325" x2="-1.95" y2="-4.325" width="0.1" layer="51"/>
-<wire x1="-1.95" y1="-4.325" x2="-1.95" y2="4.325" width="0.1" layer="51"/>
-<wire x1="-1.95" y1="3.055" x2="-0.68" y2="4.325" width="0.1" layer="51"/>
-<wire x1="-1.6" y1="4.325" x2="1.6" y2="4.325" width="0.2" layer="21"/>
-<wire x1="1.6" y1="4.325" x2="1.6" y2="-4.325" width="0.2" layer="21"/>
-<wire x1="1.6" y1="-4.325" x2="-1.6" y2="-4.325" width="0.2" layer="21"/>
-<wire x1="-1.6" y1="-4.325" x2="-1.6" y2="4.325" width="0.2" layer="21"/>
-<wire x1="-3.45" y1="4.485" x2="-1.95" y2="4.485" width="0.2" layer="21"/>
-</package>
-</packages>
-</library>
 <library name="led" urn="urn:adsk.eagle:library:259">
 <description>&lt;b&gt;LEDs&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;&lt;br&gt;
@@ -1596,6 +1556,46 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 </package>
 </packages>
 </library>
+<library name="ATTINY3224-SSU">
+<description>&lt;8-bit Microcontrollers - MCU 20MHz, 32KB, SOIC14, Ind 85C, Green&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
+<packages>
+<package name="SOIC127P600X175-14N">
+<description>&lt;b&gt;14-LEAD PSO (SL) - NARROW, 3.9MM [SOIC]&lt;/b&gt;&lt;br&gt;
+</description>
+<smd name="1" x="-2.7" y="3.81" dx="1.5" dy="0.65" layer="1"/>
+<smd name="2" x="-2.7" y="2.54" dx="1.5" dy="0.65" layer="1"/>
+<smd name="3" x="-2.7" y="1.27" dx="1.5" dy="0.65" layer="1"/>
+<smd name="4" x="-2.7" y="0" dx="1.5" dy="0.65" layer="1"/>
+<smd name="5" x="-2.7" y="-1.27" dx="1.5" dy="0.65" layer="1"/>
+<smd name="6" x="-2.7" y="-2.54" dx="1.5" dy="0.65" layer="1"/>
+<smd name="7" x="-2.7" y="-3.81" dx="1.5" dy="0.65" layer="1"/>
+<smd name="8" x="2.7" y="-3.81" dx="1.5" dy="0.65" layer="1"/>
+<smd name="9" x="2.7" y="-2.54" dx="1.5" dy="0.65" layer="1"/>
+<smd name="10" x="2.7" y="-1.27" dx="1.5" dy="0.65" layer="1"/>
+<smd name="11" x="2.7" y="0" dx="1.5" dy="0.65" layer="1"/>
+<smd name="12" x="2.7" y="1.27" dx="1.5" dy="0.65" layer="1"/>
+<smd name="13" x="2.7" y="2.54" dx="1.5" dy="0.65" layer="1"/>
+<smd name="14" x="2.7" y="3.81" dx="1.5" dy="0.65" layer="1"/>
+<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-3.7" y1="4.575" x2="3.7" y2="4.575" width="0.05" layer="51"/>
+<wire x1="3.7" y1="4.575" x2="3.7" y2="-4.575" width="0.05" layer="51"/>
+<wire x1="3.7" y1="-4.575" x2="-3.7" y2="-4.575" width="0.05" layer="51"/>
+<wire x1="-3.7" y1="-4.575" x2="-3.7" y2="4.575" width="0.05" layer="51"/>
+<wire x1="-1.95" y1="4.325" x2="1.95" y2="4.325" width="0.1" layer="51"/>
+<wire x1="1.95" y1="4.325" x2="1.95" y2="-4.325" width="0.1" layer="51"/>
+<wire x1="1.95" y1="-4.325" x2="-1.95" y2="-4.325" width="0.1" layer="51"/>
+<wire x1="-1.95" y1="-4.325" x2="-1.95" y2="4.325" width="0.1" layer="51"/>
+<wire x1="-1.95" y1="3.055" x2="-0.68" y2="4.325" width="0.1" layer="51"/>
+<wire x1="-1.6" y1="4.325" x2="1.6" y2="4.325" width="0.2" layer="21"/>
+<wire x1="1.6" y1="4.325" x2="1.6" y2="-4.325" width="0.2" layer="21"/>
+<wire x1="1.6" y1="-4.325" x2="-1.6" y2="-4.325" width="0.2" layer="21"/>
+<wire x1="-1.6" y1="-4.325" x2="-1.6" y2="4.325" width="0.2" layer="21"/>
+<wire x1="-3.45" y1="4.485" x2="-1.95" y2="4.485" width="0.2" layer="21"/>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1791,15 +1791,15 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 <attribute name="POPULARITY" value="86" x="-14.732" y="24.892" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="-14.732" y="24.892" size="1.778" layer="28" rot="MR90" display="off"/>
 </element>
-<element name="IC1" library="ATTINY1624-SSU" package="SOIC127P600X175-14N" value="ATTINY1624-SSU" x="16.51" y="9.652" smashed="yes" rot="R270">
-<attribute name="ARROW_PART_NUMBER" value="" x="16.51" y="9.652" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="" x="16.51" y="9.652" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="DESCRIPTION" value="Microchip ATTINY1624-SSU, 8bit AVR Microcontroller, ATtiny1624, 20MHz, 16 kB Flash, 14-Pin SOIC14" x="16.51" y="9.652" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="IC1" library="ATTINY3224-SSU" package="SOIC127P600X175-14N" value="ATTINY3224-SSU" x="16.51" y="9.652" smashed="yes" rot="R270">
+<attribute name="ARROW_PART_NUMBER" value="ATTINY3224-SSU" x="16.51" y="9.652" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/attiny3224-ssu/microchip-technology?region=nac" x="16.51" y="9.652" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="DESCRIPTION" value="8-bit Microcontrollers - MCU 20MHz, 32KB, SOIC14, Ind 85C, Green" x="16.51" y="9.652" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="HEIGHT" value="1.75mm" x="16.51" y="9.652" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MANUFACTURER_NAME" value="Microchip" x="16.51" y="9.652" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="ATTINY1624-SSU" x="16.51" y="9.652" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="556-ATTINY1624-SSU" x="16.51" y="9.652" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Microchip-Technology-Atmel/ATTINY1624-SSU?qs=vmHwEFxEFR%2FHKYGUmUC%2Fzw%3D%3D" x="16.51" y="9.652" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="ATTINY3224-SSU" x="16.51" y="9.652" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="579-ATTINY3224-SSU" x="16.51" y="9.652" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Microchip-Technology-Atmel/ATTINY3224-SSU?qs=A6eO%252BMLsxmTXlQkMmf%252B9gw%3D%3D" x="16.51" y="9.652" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="NAME" x="13.97" y="9.652" size="0.6096" layer="25" rot="R270" align="center"/>
 <attribute name="VALUE" x="17.018" y="10.16" size="0.6096" layer="27" align="center"/>
 </element>
@@ -1925,6 +1925,24 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 <via x="24.13" y="12.7" extent="1-16" drill="0.35"/>
 <via x="24.13" y="10.16" extent="1-16" drill="0.35"/>
 <via x="22.86" y="13.97" extent="1-16" drill="0.35"/>
+<wire x1="22.86" y1="13.97" x2="24.13" y2="12.7" width="0" layer="19" extent="1-1"/>
+<wire x1="24.13" y1="10.16" x2="24.13" y2="12.7" width="0" layer="19" extent="1-1"/>
+<wire x1="27.559" y1="7.62" x2="24.13" y2="10.16" width="0" layer="19" extent="1-1"/>
+<wire x1="20.32" y1="6.952" x2="24.13" y2="10.16" width="0" layer="19" extent="1-1"/>
+<wire x1="19.558" y1="2.352" x2="20.32" y2="6.952" width="0" layer="19" extent="1-16"/>
+<wire x1="17.592" y1="13.208" x2="22.86" y2="13.97" width="0" layer="19" extent="16-16"/>
+<wire x1="15.875" y1="16.129" x2="17.592" y2="13.208" width="0" layer="19" extent="16-16"/>
+<wire x1="12.319" y1="3.302" x2="19.558" y2="2.352" width="0" layer="19" extent="16-16"/>
+<wire x1="7.874" y1="8.382" x2="12.319" y2="3.302" width="0" layer="19" extent="1-1"/>
+<wire x1="3.545" y1="7.777" x2="5.146" y2="8.382" width="0" layer="19" extent="1-16"/>
+<wire x1="4.765" y1="11.938" x2="6.0766" y2="9.779" width="0" layer="19" extent="1-1"/>
+<wire x1="0.889" y1="6.543" x2="3.545" y2="7.777" width="0" layer="19" extent="1-16"/>
+<wire x1="0.345" y1="5.927" x2="0.889" y2="6.543" width="0" layer="19" extent="1-16"/>
+<wire x1="0.381" y1="3.302" x2="0.345" y2="5.927" width="0" layer="19" extent="16-16"/>
+<wire x1="5.08" y1="15.24" x2="4.765" y2="11.938" width="0" layer="19" extent="1-1"/>
+<wire x1="1.27" y1="12.827" x2="4.765" y2="11.938" width="0" layer="19" extent="1-1"/>
+<wire x1="0.345" y1="13.377" x2="1.27" y2="12.827" width="0" layer="19" extent="1-16"/>
+<wire x1="8.89" y1="18.415" x2="5.08" y2="15.24" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="RX">
 <contactref element="IC1" pad="6"/>

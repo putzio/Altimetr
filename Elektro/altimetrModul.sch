@@ -209,111 +209,6 @@
 </deviceset>
 </devicesets>
 </library>
-<library name="ATTINY1624-SSU">
-<description>&lt;Microchip ATTINY1624-SSU, 8bit AVR Microcontroller, ATtiny1624, 20MHz, 16 kB Flash, 14-Pin SOIC14&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
-<packages>
-<package name="SOIC127P600X175-14N">
-<description>&lt;b&gt;14 Lead Small Outline (SL) Narrow SOIC&lt;/b&gt;&lt;br&gt;
-</description>
-<smd name="1" x="-2.7" y="3.81" dx="1.5" dy="0.65" layer="1"/>
-<smd name="2" x="-2.7" y="2.54" dx="1.5" dy="0.65" layer="1"/>
-<smd name="3" x="-2.7" y="1.27" dx="1.5" dy="0.65" layer="1"/>
-<smd name="4" x="-2.7" y="0" dx="1.5" dy="0.65" layer="1"/>
-<smd name="5" x="-2.7" y="-1.27" dx="1.5" dy="0.65" layer="1"/>
-<smd name="6" x="-2.7" y="-2.54" dx="1.5" dy="0.65" layer="1"/>
-<smd name="7" x="-2.7" y="-3.81" dx="1.5" dy="0.65" layer="1"/>
-<smd name="8" x="2.7" y="-3.81" dx="1.5" dy="0.65" layer="1"/>
-<smd name="9" x="2.7" y="-2.54" dx="1.5" dy="0.65" layer="1"/>
-<smd name="10" x="2.7" y="-1.27" dx="1.5" dy="0.65" layer="1"/>
-<smd name="11" x="2.7" y="0" dx="1.5" dy="0.65" layer="1"/>
-<smd name="12" x="2.7" y="1.27" dx="1.5" dy="0.65" layer="1"/>
-<smd name="13" x="2.7" y="2.54" dx="1.5" dy="0.65" layer="1"/>
-<smd name="14" x="2.7" y="3.81" dx="1.5" dy="0.65" layer="1"/>
-<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-3.7" y1="4.575" x2="3.7" y2="4.575" width="0.05" layer="51"/>
-<wire x1="3.7" y1="4.575" x2="3.7" y2="-4.575" width="0.05" layer="51"/>
-<wire x1="3.7" y1="-4.575" x2="-3.7" y2="-4.575" width="0.05" layer="51"/>
-<wire x1="-3.7" y1="-4.575" x2="-3.7" y2="4.575" width="0.05" layer="51"/>
-<wire x1="-1.95" y1="4.325" x2="1.95" y2="4.325" width="0.1" layer="51"/>
-<wire x1="1.95" y1="4.325" x2="1.95" y2="-4.325" width="0.1" layer="51"/>
-<wire x1="1.95" y1="-4.325" x2="-1.95" y2="-4.325" width="0.1" layer="51"/>
-<wire x1="-1.95" y1="-4.325" x2="-1.95" y2="4.325" width="0.1" layer="51"/>
-<wire x1="-1.95" y1="3.055" x2="-0.68" y2="4.325" width="0.1" layer="51"/>
-<wire x1="-1.6" y1="4.325" x2="1.6" y2="4.325" width="0.2" layer="21"/>
-<wire x1="1.6" y1="4.325" x2="1.6" y2="-4.325" width="0.2" layer="21"/>
-<wire x1="1.6" y1="-4.325" x2="-1.6" y2="-4.325" width="0.2" layer="21"/>
-<wire x1="-1.6" y1="-4.325" x2="-1.6" y2="4.325" width="0.2" layer="21"/>
-<wire x1="-3.45" y1="4.485" x2="-1.95" y2="4.485" width="0.2" layer="21"/>
-</package>
-</packages>
-<symbols>
-<symbol name="ATTINY1624-SSU">
-<wire x1="5.08" y1="2.54" x2="48.26" y2="2.54" width="0.254" layer="94"/>
-<wire x1="48.26" y1="-17.78" x2="48.26" y2="2.54" width="0.254" layer="94"/>
-<wire x1="48.26" y1="-17.78" x2="5.08" y2="-17.78" width="0.254" layer="94"/>
-<wire x1="5.08" y1="2.54" x2="5.08" y2="-17.78" width="0.254" layer="94"/>
-<text x="49.53" y="7.62" size="1.778" layer="95" align="center-left">&gt;NAME</text>
-<text x="49.53" y="5.08" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
-<pin name="VDD" x="0" y="0" length="middle"/>
-<pin name="PA4" x="0" y="-2.54" length="middle"/>
-<pin name="PA5" x="0" y="-5.08" length="middle"/>
-<pin name="PA6" x="0" y="-7.62" length="middle"/>
-<pin name="PA7" x="0" y="-10.16" length="middle"/>
-<pin name="(TOSC1)_PB3" x="0" y="-12.7" length="middle"/>
-<pin name="(TOSC2)_PB2" x="0" y="-15.24" length="middle"/>
-<pin name="GND" x="53.34" y="0" length="middle" rot="R180"/>
-<pin name="PA3_(EXTCLK)" x="53.34" y="-2.54" length="middle" rot="R180"/>
-<pin name="PA2" x="53.34" y="-5.08" length="middle" rot="R180"/>
-<pin name="PA1" x="53.34" y="-7.62" length="middle" rot="R180"/>
-<pin name="PA0_(UPDI/!RESET)" x="53.34" y="-10.16" length="middle" rot="R180"/>
-<pin name="PB0" x="53.34" y="-12.7" length="middle" rot="R180"/>
-<pin name="PB1" x="53.34" y="-15.24" length="middle" rot="R180"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="ATTINY1624-SSU" prefix="IC">
-<description>&lt;b&gt;Microchip ATTINY1624-SSU, 8bit AVR Microcontroller, ATtiny1624, 20MHz, 16 kB Flash, 14-Pin SOIC14&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/ATtiny1624-26-27-DataSheet-DS40002234A.pdf"&gt; Datasheet &lt;/a&gt;</description>
-<gates>
-<gate name="G$1" symbol="ATTINY1624-SSU" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="SOIC127P600X175-14N">
-<connects>
-<connect gate="G$1" pin="(TOSC1)_PB3" pad="6"/>
-<connect gate="G$1" pin="(TOSC2)_PB2" pad="7"/>
-<connect gate="G$1" pin="GND" pad="14"/>
-<connect gate="G$1" pin="PA0_(UPDI/!RESET)" pad="10"/>
-<connect gate="G$1" pin="PA1" pad="11"/>
-<connect gate="G$1" pin="PA2" pad="12"/>
-<connect gate="G$1" pin="PA3_(EXTCLK)" pad="13"/>
-<connect gate="G$1" pin="PA4" pad="2"/>
-<connect gate="G$1" pin="PA5" pad="3"/>
-<connect gate="G$1" pin="PA6" pad="4"/>
-<connect gate="G$1" pin="PA7" pad="5"/>
-<connect gate="G$1" pin="PB0" pad="9"/>
-<connect gate="G$1" pin="PB1" pad="8"/>
-<connect gate="G$1" pin="VDD" pad="1"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="ARROW_PART_NUMBER" value="" constant="no"/>
-<attribute name="ARROW_PRICE-STOCK" value="" constant="no"/>
-<attribute name="DESCRIPTION" value="Microchip ATTINY1624-SSU, 8bit AVR Microcontroller, ATtiny1624, 20MHz, 16 kB Flash, 14-Pin SOIC14" constant="no"/>
-<attribute name="HEIGHT" value="1.75mm" constant="no"/>
-<attribute name="MANUFACTURER_NAME" value="Microchip" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="ATTINY1624-SSU" constant="no"/>
-<attribute name="MOUSER_PART_NUMBER" value="556-ATTINY1624-SSU" constant="no"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Microchip-Technology-Atmel/ATTINY1624-SSU?qs=vmHwEFxEFR%2FHKYGUmUC%2Fzw%3D%3D" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="led" urn="urn:adsk.eagle:library:259">
 <description>&lt;b&gt;LEDs&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;&lt;br&gt;
@@ -10963,6 +10858,111 @@ Source: &lt;a href="http://www.mouser.com/ds/2/268/mic5365-779177.pdf"&gt; Datas
 </deviceset>
 </devicesets>
 </library>
+<library name="ATTINY3224-SSU">
+<description>&lt;8-bit Microcontrollers - MCU 20MHz, 32KB, SOIC14, Ind 85C, Green&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
+<packages>
+<package name="SOIC127P600X175-14N">
+<description>&lt;b&gt;14-LEAD PSO (SL) - NARROW, 3.9MM [SOIC]&lt;/b&gt;&lt;br&gt;
+</description>
+<smd name="1" x="-2.7" y="3.81" dx="1.5" dy="0.65" layer="1"/>
+<smd name="2" x="-2.7" y="2.54" dx="1.5" dy="0.65" layer="1"/>
+<smd name="3" x="-2.7" y="1.27" dx="1.5" dy="0.65" layer="1"/>
+<smd name="4" x="-2.7" y="0" dx="1.5" dy="0.65" layer="1"/>
+<smd name="5" x="-2.7" y="-1.27" dx="1.5" dy="0.65" layer="1"/>
+<smd name="6" x="-2.7" y="-2.54" dx="1.5" dy="0.65" layer="1"/>
+<smd name="7" x="-2.7" y="-3.81" dx="1.5" dy="0.65" layer="1"/>
+<smd name="8" x="2.7" y="-3.81" dx="1.5" dy="0.65" layer="1"/>
+<smd name="9" x="2.7" y="-2.54" dx="1.5" dy="0.65" layer="1"/>
+<smd name="10" x="2.7" y="-1.27" dx="1.5" dy="0.65" layer="1"/>
+<smd name="11" x="2.7" y="0" dx="1.5" dy="0.65" layer="1"/>
+<smd name="12" x="2.7" y="1.27" dx="1.5" dy="0.65" layer="1"/>
+<smd name="13" x="2.7" y="2.54" dx="1.5" dy="0.65" layer="1"/>
+<smd name="14" x="2.7" y="3.81" dx="1.5" dy="0.65" layer="1"/>
+<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-3.7" y1="4.575" x2="3.7" y2="4.575" width="0.05" layer="51"/>
+<wire x1="3.7" y1="4.575" x2="3.7" y2="-4.575" width="0.05" layer="51"/>
+<wire x1="3.7" y1="-4.575" x2="-3.7" y2="-4.575" width="0.05" layer="51"/>
+<wire x1="-3.7" y1="-4.575" x2="-3.7" y2="4.575" width="0.05" layer="51"/>
+<wire x1="-1.95" y1="4.325" x2="1.95" y2="4.325" width="0.1" layer="51"/>
+<wire x1="1.95" y1="4.325" x2="1.95" y2="-4.325" width="0.1" layer="51"/>
+<wire x1="1.95" y1="-4.325" x2="-1.95" y2="-4.325" width="0.1" layer="51"/>
+<wire x1="-1.95" y1="-4.325" x2="-1.95" y2="4.325" width="0.1" layer="51"/>
+<wire x1="-1.95" y1="3.055" x2="-0.68" y2="4.325" width="0.1" layer="51"/>
+<wire x1="-1.6" y1="4.325" x2="1.6" y2="4.325" width="0.2" layer="21"/>
+<wire x1="1.6" y1="4.325" x2="1.6" y2="-4.325" width="0.2" layer="21"/>
+<wire x1="1.6" y1="-4.325" x2="-1.6" y2="-4.325" width="0.2" layer="21"/>
+<wire x1="-1.6" y1="-4.325" x2="-1.6" y2="4.325" width="0.2" layer="21"/>
+<wire x1="-3.45" y1="4.485" x2="-1.95" y2="4.485" width="0.2" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="ATTINY3224-SSU">
+<wire x1="5.08" y1="2.54" x2="48.26" y2="2.54" width="0.254" layer="94"/>
+<wire x1="48.26" y1="-17.78" x2="48.26" y2="2.54" width="0.254" layer="94"/>
+<wire x1="48.26" y1="-17.78" x2="5.08" y2="-17.78" width="0.254" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="5.08" y2="-17.78" width="0.254" layer="94"/>
+<text x="49.53" y="7.62" size="1.778" layer="95" align="center-left">&gt;NAME</text>
+<text x="49.53" y="5.08" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
+<pin name="VDD" x="0" y="0" length="middle"/>
+<pin name="PA4" x="0" y="-2.54" length="middle"/>
+<pin name="PA5" x="0" y="-5.08" length="middle"/>
+<pin name="PA6" x="0" y="-7.62" length="middle"/>
+<pin name="PA7" x="0" y="-10.16" length="middle"/>
+<pin name="(TOSC1)_PB3" x="0" y="-12.7" length="middle"/>
+<pin name="(TOSC2)_PB2" x="0" y="-15.24" length="middle"/>
+<pin name="GND" x="53.34" y="0" length="middle" rot="R180"/>
+<pin name="PA3_(EXTCLK)" x="53.34" y="-2.54" length="middle" rot="R180"/>
+<pin name="PA2" x="53.34" y="-5.08" length="middle" rot="R180"/>
+<pin name="PA1" x="53.34" y="-7.62" length="middle" rot="R180"/>
+<pin name="PA0_(UPDI/!RESET)" x="53.34" y="-10.16" length="middle" rot="R180"/>
+<pin name="PB0" x="53.34" y="-12.7" length="middle" rot="R180"/>
+<pin name="PB1" x="53.34" y="-15.24" length="middle" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="ATTINY3224-SSU" prefix="IC">
+<description>&lt;b&gt;8-bit Microcontrollers - MCU 20MHz, 32KB, SOIC14, Ind 85C, Green&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATtiny3224-3226-3227-Data-Sheet-DS40002345B.pdf"&gt; Datasheet &lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="ATTINY3224-SSU" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOIC127P600X175-14N">
+<connects>
+<connect gate="G$1" pin="(TOSC1)_PB3" pad="6"/>
+<connect gate="G$1" pin="(TOSC2)_PB2" pad="7"/>
+<connect gate="G$1" pin="GND" pad="14"/>
+<connect gate="G$1" pin="PA0_(UPDI/!RESET)" pad="10"/>
+<connect gate="G$1" pin="PA1" pad="11"/>
+<connect gate="G$1" pin="PA2" pad="12"/>
+<connect gate="G$1" pin="PA3_(EXTCLK)" pad="13"/>
+<connect gate="G$1" pin="PA4" pad="2"/>
+<connect gate="G$1" pin="PA5" pad="3"/>
+<connect gate="G$1" pin="PA6" pad="4"/>
+<connect gate="G$1" pin="PA7" pad="5"/>
+<connect gate="G$1" pin="PB0" pad="9"/>
+<connect gate="G$1" pin="PB1" pad="8"/>
+<connect gate="G$1" pin="VDD" pad="1"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="ARROW_PART_NUMBER" value="ATTINY3224-SSU" constant="no"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/attiny3224-ssu/microchip-technology?region=nac" constant="no"/>
+<attribute name="DESCRIPTION" value="8-bit Microcontrollers - MCU 20MHz, 32KB, SOIC14, Ind 85C, Green" constant="no"/>
+<attribute name="HEIGHT" value="1.75mm" constant="no"/>
+<attribute name="MANUFACTURER_NAME" value="Microchip" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="ATTINY3224-SSU" constant="no"/>
+<attribute name="MOUSER_PART_NUMBER" value="579-ATTINY3224-SSU" constant="no"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Microchip-Technology-Atmel/ATTINY3224-SSU?qs=A6eO%252BMLsxmTXlQkMmf%252B9gw%3D%3D" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -10985,7 +10985,7 @@ Source: &lt;a href="http://www.mouser.com/ds/2/268/mic5365-779177.pdf"&gt; Datas
 <parts>
 <part name="LED1" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIP-LED0805" package3d_urn="urn:adsk.eagle:package:15818/2"/>
 <part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="470R"/>
-<part name="IC1" library="ATTINY1624-SSU" deviceset="ATTINY1624-SSU" device=""/>
+<part name="IC1" library="ATTINY3224-SSU" deviceset="ATTINY3224-SSU" device=""/>
 <part name="GND2" library="PUTRocketLab_supply" deviceset="GND" device=""/>
 <part name="GND3" library="PUTRocketLab_supply" deviceset="GND" device=""/>
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="100nF"/>
