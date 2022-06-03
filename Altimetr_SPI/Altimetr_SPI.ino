@@ -21,13 +21,14 @@
 #define SCK 13
 #define SEND_DATA_UART_EN 7
 
+#define DEFAULT_PREASSURE 1013
 #define BAUD_RATE 115200
 //--------------GLOBAL VARIABLES--------------------
-float initialHight;
 uint32_t t = 0; // timer updated with millis()
 bool flashOn = false;
-uint32_t addr = START_ADRESS;
+uint32_t addr;
 uint8_t seaLevelPreassureAdress = 0x00;
+
 //--------------------------------------------------
 //--------------------------------------------------
 
@@ -51,6 +52,14 @@ void FindEmptyAdress(SPIFlash *flash, uint32_t *startingAdress);
 
 void setup()
 {
+/*
+ * 1. Inicjalizacja peryferiów                ok
+ * 2. EEPROM                                  test
+ * 3. Test BMP280                             test
+ * 4. Test Flasha (połączenie - JEDEC???)
+ * 5. Znalezienie pierwszego wolnego adresu->addr   test
+ * 6. Pamięć w połowie pełna - dioda się świeci
+ */  
   //Set all pins as OUTPUT:
   for (int i = 0; i < 11; i++)
     pinMode(i, OUTPUT);
@@ -61,47 +70,41 @@ void setup()
   //UART INITIALISATION
   Serial.begin(BAUD_RATE);
   while (!Serial && !digitalRead(SEND_DATA_UART_EN));
-  delay(100);
+//  delay(100);
   if (Serial)
     Serial.println("Device connected");
   //--------------------------------------------------
   //EEPROM Test:
+  if(Serial)
   {
-    Serial.print("TST:Saved Preassure:\t");
+    uint16_t preassure = ReadSavedPreassure();
+    if(preassure<800||preassure>2000)
+    {
+      Serial.print("TST:Saved sea level preassure: ");
+      Serial.print(preassure);
+      Serial.print(" is out of range <800,2000> and will be changed to the default: ");
+      Serial.println(DEFAULT_PREASSURE); 
+      UpdatePreassure(DEFAULT_PREASSURE);
+    }
+    Serial.print("TST:Saved sea level preassure:\t");
     Serial.println(ReadSavedPreassure());
   }
-  
-  {
-    SPIFlash flash(CS_FLASH);
-    flash.begin();
-    Serial.println("TST:FLASH1");
-    delay(500);
-    flash.writeLong(0x04,37);
-    delay(500);
-    Serial.print("TST:ADR 0x00:\t");
-    delay(1000);
-    long ad = flash.readLong(0x04);
-    Serial.println(ad);
-    SPI.end();
-  }  
-    
+  else if (ReadSavedPreassure()<900)
+    UpdatePreassure(DEFAULT_PREASSURE);
   //BMP280 TEST
   {
     Adafruit_BMP280 bmp(CS_BMP, MOSI, MISO, SCK);
     BMP280Init(&bmp);
-    initialHight = bmp.readAltitude(ReadSavedPreassure());
     if (Serial)
     {
-      Serial.print("TST:INITIAL HIGHT:\t");
-      Serial.println(initialHight);
+      Serial.print("TST:HIGHT:\t");
+      Serial.println(bmp.readAltitude(ReadSavedPreassure()));
       Serial.print("TST:TEMP:\t");
       Serial.println(bmp.readTemperature());
       Serial.print("TST:PRESSURE:\t");
-      Serial.println(bmp.readPressure());
-      
+      Serial.println(bmp.readPressure());      
     }
-  }
-  //--------------------------------------------------
+  }    
 
 //  //FLASH TEST
   {
@@ -109,13 +112,8 @@ void setup()
     delay(1000);
     SPIFlash flash(CS_FLASH);
     flash.begin();
-  //  if(SEND_DATA_UART_EN)
-  //  {
-  //    flash.eraseChip();
-  //    Serial.println("ChipErased");
-  //  }
     delay(1000);
-  //  if (Serial)
+    if (Serial)
     {
       Serial.println("TST:FLASH1");
       delay(500);
@@ -126,35 +124,24 @@ void setup()
       long ad = flash.readLong(0x00);
       Serial.println(ad);
     }
-  //  if (Serial)
-    {
-      Serial.print("TST:Read Flash:\t");
-  //    Serial.println(flash.readFloat(0x00));
-      unsigned long sizeF = flash.getCapacity();
+    
+    FindEmptyAdress(&flash, &addr);
+    unsigned long sizeF = flash.getCapacity();
+
+    if(sizeF/addr < 2)
+      digitalWrite(LED,1);
+    
+    if (Serial)
+    {      
       Serial.print("TST:Flash Memory has ");
       Serial.print(sizeF);
       Serial.println(" bytes.");
-    }
-  //  for (int i = 0; i < 2; i++)
-  //  {
-  //    Serial.print("TST:time:\t");
-  //    Serial.print(flash.readLong(i));
-  //    i++;
-  //    Serial.print("\thight\t");
-  //    Serial.println(flash.readLong(i));
-  //    delay(500);
-  //    
-  //  }
-  //
-    delay(1000);
-    uint32_t start = 0;
-    FindEmptyAdress(&flash, &start);
-  //  if (Serial)
-    {
+      delay(1000);
+      
       Serial.print("TST:START ADDR:\t");
-      Serial.println(start);
+      Serial.println(addr);
       Serial.print("TST:How many measurements are stored:\t");
-      Serial.println(start / 8);
+      Serial.println(addr / 8);
     }
     SPI.end();
   }
@@ -163,6 +150,17 @@ void setup()
 
 void loop()
 {
+  /*
+   * 1. Sprawdzenie zworki - UART
+   * 2. Jeżeli jest:
+   * Obsłużenie akcji dla użytkownika:
+   * Zmaina ciśnienia w EEPROM
+   * Czyszczenie flasha
+   * Wysyłanie danych po uarcie
+   * 
+   * 3. Jeżeli nie jest
+   * Odczyty z czujnika i zapis do flasha
+   */
   if (!digitalRead(SEND_DATA_UART_EN))
   {
     if (Serial)
@@ -201,41 +199,45 @@ void loop()
             }
             else if (recivedData.substring(0, 3) == "#MD")
             {
-              Serial.println("###MD!!!");
               SPIFlash flash(CS_FLASH);
               flash.begin();
               addr = 0x00;//to start with the first value in the flash
               {
-                uint32_t flashCapacity;
-                uint32_t flashTime, newFlashTime;
-
-                do
-                {
-                  flashCapacity = flash.getCapacity();
-                  Serial.println(flashCapacity);
-                }while (flashCapacity < 1); // to avoid an error with reading the 0 capacity value from flash
-                
-                Serial.print("TST: Capaicty\t");
+                uint32_t flashCapacity, flashTime = 0, newFlashTime;
+                flashCapacity = flash.getCapacity();
                 Serial.println(flashCapacity);
                 
-                while (addr < 100)//flashCapacity
+                while (addr < flashCapacity)//flashCapacity
                 {
                   //read all of the
                   newFlashTime = flash.readLong(addr);
+                  if(newFlashTime == 0xFFFFFFFF)
+                  {
+                    Serial.println("END&");
+                    break;
+                  }
                   if (flashTime > newFlashTime)
-                    Serial.println("end");//the new series of measurements has started
+                    Serial.println("end&");//the new series of measurements has started
                   flashTime = newFlashTime;
                   //Send the data
                   Serial.print("#t:");
                   Serial.print(newFlashTime);
                   addr += 4;
                   Serial.print("&h:");
-                  Serial.print(flash.readFloat(addr));
-                  Serial.println("$");
+                  Serial.print(flash.readLong(addr));
+                  Serial.print("$");
+                  delay(20);
                   addr += 4;
+//                  String ok;
+//                  while(ok != "ok")
+//                  {
+//                    if(Serial.available()>1)
+//                      while(Serial.available()>0)
+//                        ok = Serial.read();
+//                  }
                 }
                 SPI.end();
-                Serial.println("END");
+                
                 delay(2000);
               }
             }
@@ -248,19 +250,15 @@ void loop()
   {
     t = millis();
     //Just measure the hight and write it to flash
-    Serial.println("MEASURE HIGHT");
-    float hight;
+    uint32_t hight;
     {
       delay(100);
       Adafruit_BMP280 bmp(CS_BMP, MOSI, MISO, SCK);
       bmp.begin();
-      Serial.println("MEASURE HIGHT1");
       delay(100);
       BMP280Init(&bmp);
-      Serial.println("MEASURE HIGHT2");
       delay(100);
-      hight = bmp.readAltitude(ReadSavedPreassure()); // - initialHight;
-      Serial.println("MEASURE HIGHT3");
+      hight = (uint32_t)bmp.readAltitude(ReadSavedPreassure()); // - initialHight;
       delay(100);
     }
     Serial.println(hight);
@@ -280,7 +278,7 @@ void loop()
     flash.begin();
     flash.writeLong(addr, millis());
     addr += 4;
-    flash.writeFloat(addr, hight);
+    flash.writeLong(addr, hight);
     addr += 4;
     SPI.end();
   }
@@ -323,16 +321,16 @@ void BMP280Init(Adafruit_BMP280 * bmp)
 // checks if the adress is empty
 bool CheckAdress(SPIFlash * flash, uint32_t addr)
 {
-  Serial.println("Check Adress IN");
+//  Serial.println("Check Adress IN");
   int32_t val = flash->readLong(addr);
-  Serial.println(val);
-   Serial.println("Check Adress OUT");
+//  Serial.println(val);
+//   Serial.println("Check Adress OUT");
   return (val == 0xFFFFFFFF);
 }
 
 void FindEmptyAdress(SPIFlash * flash, uint32_t *startingAdress)
 {
-  Serial.println("Find Adress IN");
+//  Serial.println("Find Adress IN");
 
   uint32_t sizeF = flash->getCapacity();
   while (1)
@@ -352,7 +350,7 @@ void FindEmptyAdress(SPIFlash * flash, uint32_t *startingAdress)
     *startingAdress += 8;
   }
 
-   Serial.println("Find Adress OUT");
+//   Serial.println("Find Adress OUT");
 }
 //--------------------------------------------------
 
