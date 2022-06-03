@@ -20,7 +20,8 @@
 #define MISO 12
 #define SCK 13
 #define SEND_DATA_UART_EN 7
-
+//--------------------------------------------------
+#define EMPTY_LONG_FLASH 0xFFFFFFFF
 #define DEFAULT_PREASSURE 1013
 #define BAUD_RATE 115200
 //--------------GLOBAL VARIABLES--------------------
@@ -49,6 +50,12 @@ bool CheckAdress(SPIFlash *flash, uint32_t addr);
 void FindEmptyAdress(SPIFlash *flash, uint32_t *startingAdress);
 //--------------------------------------------------
 //--------------------------------------------------
+void WaitForUartOK()
+{
+  while(Serial.read() != (int)'K');
+}
+
+
 
 void setup()
 {
@@ -168,20 +175,20 @@ void loop()
       Serial.println("#CM");
       uint32_t t = millis();
       while (millis() - t < 2000)
-        if (Serial.available() > 3)
+        if (Serial.available() > 1)//At least 2 characters
         {
           String recivedData;
-          while (Serial.available() > 3)
-          {
-            recivedData += Serial.readString();
-            delay(50);
-          }
+          recivedData = Serial.readString();
           Serial.println(recivedData);
           Serial.println(" ");
-          if (recivedData.length() > 3)
+//          for(int i = 0; i < sizeof(recivedData)/sizeof(recivedData[0]); i++)
+//          {
+//            Serial.println(recivedData[i],HEX);
+//          }
+          if (recivedData[0] = '#')
           {
             delay(100);
-            if (recivedData.substring(0, 3) == "#P:")
+            if (recivedData[1] == 'P')
             {
               //Change Preassure
               uint16_t preassure =  recivedData.substring(3, recivedData.indexOf("&")).toFloat();
@@ -189,7 +196,7 @@ void loop()
               Serial.print("TST:New Preassure");
               Serial.println(ReadSavedPreassure());
             }
-            else if (recivedData.substring(0, 3) == "###")
+            else if (recivedData[1] == "#")
             {
               SPIFlash flash(CS_FLASH);
               //Clear Flash
@@ -197,7 +204,7 @@ void loop()
               Serial.println("TST:CHip Erased");
               SPI.end();
             }
-            else if (recivedData.substring(0, 3) == "#MD")
+            else if (recivedData[1] == 'M')
             {
               SPIFlash flash(CS_FLASH);
               flash.begin();
@@ -205,36 +212,34 @@ void loop()
               {
                 uint32_t flashCapacity, flashTime = 0, newFlashTime;
                 flashCapacity = flash.getCapacity();
-                Serial.println(flashCapacity);
                 
                 while (addr < flashCapacity)//flashCapacity
                 {
                   //read all of the
+                  uint32_t ti [6];
                   newFlashTime = flash.readLong(addr);
-                  if(newFlashTime == 0xFFFFFFFF)
+                  if(newFlashTime == EMPTY_LONG_FLASH)
                   {
                     Serial.println("END&");
+                    WaitForUartOK();
                     break;
                   }
                   if (flashTime > newFlashTime)
-                    Serial.println("end&");//the new series of measurements has started
+                    {
+                      Serial.println("end&");//the new series of measurements has started
+                      WaitForUartOK();
+                    }
                   flashTime = newFlashTime;
                   //Send the data
-                  Serial.print("#t:");
-                  Serial.print(newFlashTime);
+                  String message = "#t:";
+                  message += newFlashTime;
                   addr += 4;
-                  Serial.print("&h:");
-                  Serial.print(flash.readLong(addr));
-                  Serial.print("$");
-                  delay(20);
+                  message += "&h:";
+                  message += flash.readLong(addr);
+                  message += "$";
+                  Serial.print(message);
                   addr += 4;
-//                  String ok;
-//                  while(ok != "ok")
-//                  {
-//                    if(Serial.available()>1)
-//                      while(Serial.available()>0)
-//                        ok = Serial.read();
-//                  }
+                  WaitForUartOK();
                 }
                 SPI.end();
                 
