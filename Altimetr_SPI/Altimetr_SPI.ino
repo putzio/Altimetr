@@ -79,22 +79,35 @@ void setup()
   while (!Serial && !digitalRead(SEND_DATA_UART_EN));
 //  delay(100);
   if (Serial)
-    Serial.println("Device connected");
+    {
+      Serial.println("Device connected");
+      WaitForUartOK();
+    }
+    
   //--------------------------------------------------
   //EEPROM Test:
   if(Serial)
   {
     uint16_t preassure = ReadSavedPreassure();
-    if(preassure<800||preassure>2000)
+    if(preassure<700||preassure>2000)
     {
-      Serial.print("TST:Saved sea level preassure: ");
+      Serial.print("TSTSaved sea level preassure: ");
       Serial.print(preassure);
-      Serial.print(" is out of range <800,2000> and will be changed to the default: ");
+      Serial.println("\r\n&");
+      WaitForUartOK();
+      Serial.print("TST is out of range <800,2000>"); 
+      Serial.println("&");
+      WaitForUartOK();
+      Serial.print("TSTchange to default: ");
       Serial.println(DEFAULT_PREASSURE); 
+      Serial.println("\r\n&");
+      WaitForUartOK();
       UpdatePreassure(DEFAULT_PREASSURE);
     }
-    Serial.print("TST:Saved sea level preassure:\t");
-    Serial.println(ReadSavedPreassure());
+    Serial.print("TSTSaved sea level preassure:\t");
+    Serial.print(ReadSavedPreassure());
+    Serial.println("\r\n&");
+    WaitForUartOK();
   }
   else if (ReadSavedPreassure()<900)
     UpdatePreassure(DEFAULT_PREASSURE);
@@ -102,57 +115,41 @@ void setup()
   {
     Adafruit_BMP280 bmp(CS_BMP, MOSI, MISO, SCK);
     BMP280Init(&bmp);
-    if (Serial)
-    {
-      Serial.print("TST:HIGHT:\t");
-      Serial.println(bmp.readAltitude(ReadSavedPreassure()));
-      Serial.print("TST:TEMP:\t");
-      Serial.println(bmp.readTemperature());
-      Serial.print("TST:PRESSURE:\t");
-      Serial.println(bmp.readPressure());      
-    }
   }    
 
 //  //FLASH TEST
   {
-    Serial.println("TST:FLASH");
-    delay(1000);
     SPIFlash flash(CS_FLASH);
     flash.begin();
-    delay(1000);
-    if (Serial)
-    {
-      Serial.println("TST:FLASH1");
-      delay(500);
-  //    flash.writeLong(0x00,2137);
-      delay(500);
-      Serial.print("TST:ADR 0x00:\t");
-      delay(1000);    
-      long ad = flash.readLong(0x00);
-      Serial.println(ad);
-    }
+    delay(100);
     
     FindEmptyAdress(&flash, &addr);
     unsigned long sizeF = flash.getCapacity();
 
-    if(sizeF/addr < 2)
+    //if Flash memory is half-full turn on the LED
+    if((sizeF/addr) < 2)
       digitalWrite(LED,1);
     
     if (Serial)
     {      
-      Serial.print("TST:Flash Memory has ");
+      Serial.print("TSTFlash size: ");
       Serial.print(sizeF);
-      Serial.println(" bytes.");
-      delay(1000);
+      Serial.print(" B\r\n&");
+      Serial.print("&");
+      WaitForUartOK();
       
-      Serial.print("TST:START ADDR:\t");
-      Serial.println(addr);
-      Serial.print("TST:How many measurements are stored:\t");
+      
+      Serial.print("TSTSTART ADDR:\t");
+      Serial.print(addr);
+      Serial.print("\r\n&");
+      WaitForUartOK();
+      Serial.print("TSTNr of measurements:\t");
       Serial.println(addr / 8);
+      Serial.print("\r\n&");
+      WaitForUartOK();
     }
     SPI.end();
   }
-  Serial.println("SETUP ENDS");
 }
 
 void loop()
@@ -175,37 +172,36 @@ void loop()
       Serial.println("#CM");
       uint32_t t = millis();
       while (millis() - t < 2000)
-        if (Serial.available() > 1)//At least 2 characters
+      if (Serial.available() > 1)//At least 2 characters
+      {
+        String recivedData;
+        recivedData = Serial.readString();
+        Serial.println(recivedData);
+        Serial.println(" ");
+        if (recivedData[0] = '#')
         {
-          String recivedData;
-          recivedData = Serial.readString();
-          Serial.println(recivedData);
-          Serial.println(" ");
-//          for(int i = 0; i < sizeof(recivedData)/sizeof(recivedData[0]); i++)
-//          {
-//            Serial.println(recivedData[i],HEX);
-//          }
-          if (recivedData[0] = '#')
+          switch(recivedData[1])
           {
-            delay(100);
-            if (recivedData[1] == 'P')
+            case 'P':
             {
-              //Change Preassure
+               //Change Preassure
               uint16_t preassure =  recivedData.substring(3, recivedData.indexOf("&")).toFloat();
               UpdatePreassure(preassure);
               Serial.print("TST:New Preassure");
               Serial.println(ReadSavedPreassure());
+              break;
             }
-            else if (recivedData[1] == "#")
+            case '#':
             {
               SPIFlash flash(CS_FLASH);
               //Clear Flash
               flash.eraseChip();
-              Serial.println("TST:CHip Erased");
+              Serial.println("TST:Chip Erased");
               SPI.end();
-            }
-            else if(recivedData[1] == 'H')
-            {            
+              break;
+           }
+           case 'H':
+           {            
               Adafruit_BMP280 bmp(CS_BMP, MOSI, MISO, SCK);
               bmp.begin();
               delay(100);
@@ -218,8 +214,37 @@ void loop()
               message += "&";
               Serial.println(message);
               WaitForUartOK();
+              break;
             }
-            else if (recivedData[1] == 'M')
+            case 'A':
+            {
+              Adafruit_BMP280 bmp(CS_BMP, MOSI, MISO, SCK);
+              bmp.begin();
+              delay(100);
+              BMP280Init(&bmp);
+              delay(100);
+              float t = bmp.readTemperature();
+              uint32_t p = (uint32_t)bmp.readPressure();
+              uint32_t h = (uint32_t)bmp.readAltitude(ReadSavedPreassure());
+              delay(100);
+              String message = "TSTT: ";
+              message += t;
+              message += " *C&";
+              Serial.println(message);
+              WaitForUartOK();
+              message = "TST\tP: ";
+              message += p;
+              message += " Pa&";
+              Serial.println(message);
+              WaitForUartOK();
+              message = "TST\tH: "; 
+              message += h;
+              message += " m\r\n&";             
+              Serial.println(message);
+              WaitForUartOK();
+              break;
+            }
+            case 'M':
             {
               SPIFlash flash(CS_FLASH);
               flash.begin();
@@ -240,10 +265,10 @@ void loop()
                     break;
                   }
                   if (flashTime > newFlashTime)
-                    {
-                      Serial.println("end&");//the new series of measurements has started
-                      WaitForUartOK();
-                    }
+                  {
+                    Serial.println("end&");//the new series of measurements has started
+                    WaitForUartOK();
+                  }
                   flashTime = newFlashTime;
                   //Send the data
                   String message = "#t:";
@@ -256,13 +281,13 @@ void loop()
                   addr += 4;
                   WaitForUartOK();
                 }
-                SPI.end();
-                
+                SPI.end();                  
                 delay(2000);
               }
-            }
-          }
+            }              
+          }            
         }
+      }
     }
   }
 

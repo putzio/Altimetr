@@ -11473,17 +11473,6 @@ Source: &lt;a href="http://www.datasheetbank.com/datasheet-download/691593/1/Win
 <sheets>
 <sheet>
 <plain>
-<text x="-220.98" y="99.06" size="1.778" layer="101">PORTY:
-
-1. RX,TX,INT,GND (z Trackera 2.x)
-
-2. 3v3,UPDI,GND (Piny 2.54)
-
-3. Zworka Regulator_EN
-
-4. 2 PIN (2.54) V+,GND (Ładowanie)
-
-CHIP_SELECT PULLUP???</text>
 <frame x1="-177.8" y1="17.78" x2="111.76" y2="139.7" columns="8" rows="5" layer="91"/>
 </plain>
 <instances>
@@ -11948,10 +11937,6 @@ CHIP_SELECT PULLUP???</text>
 </schematic>
 </drawing>
 <compatibility>
-<note version="6.3" minversion="6.2.2" severity="warning">
-Since Version 6.2.2 text objects can contain more than one line,
-which will not be processed correctly with this version.
-</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
