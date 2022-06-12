@@ -13,13 +13,13 @@
  * using SPIFlash object I run the SPI.end() function
  */
 
-//---------------UNO-------------------------------
-#define CS_BMP 10
-#define CS_FLASH 2
-#define MOSI 11
-#define MISO 12
-#define SCK 13
-#define SEND_DATA_UART_EN 7
+////---------------UNO-------------------------------
+//#define CS_BMP 10
+//#define CS_FLASH 2
+//#define MOSI 11
+//#define MISO 12
+//#define SCK 13
+//#define SEND_DATA_UART_EN 7
 //--------------------------------------------------
 #define EMPTY_LONG_FLASH 0xFFFFFFFF
 #define DEFAULT_PREASSURE 1013
@@ -203,6 +203,21 @@ void loop()
               flash.eraseChip();
               Serial.println("TST:CHip Erased");
               SPI.end();
+            }
+            else if(recivedData[1] == 'H')
+            {            
+              Adafruit_BMP280 bmp(CS_BMP, MOSI, MISO, SCK);
+              bmp.begin();
+              delay(100);
+              BMP280Init(&bmp);
+              delay(100);
+              uint32_t p = (uint32_t)bmp.readPressure();
+              delay(100);
+              String message = "#h:";
+              message += p;
+              message += "&";
+              Serial.println(message);
+              WaitForUartOK();
             }
             else if (recivedData[1] == 'M')
             {
